@@ -1,1 +1,1 @@
-# docker-java
+# Java 12 with Docker
