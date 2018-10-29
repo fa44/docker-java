@@ -1,0 +1,14 @@
+sudo: required
+
+language: java
+
+services:
+  - docker
+
+jdk:
+  - oraclejdk8
+
+after_success:
+  - docker build . -t fa44/docker-java
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push fa44/docker-java
